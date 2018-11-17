@@ -12,11 +12,16 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: "javascript/auto",
+      },
     ],
   },
   // file extensions for webpack to look at
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['*', '.webpack.js', '.web.js', '.mjs', '.js', '.jsx', '.json'],
   },
   // where webpack will output your finished bundle
   output: {
